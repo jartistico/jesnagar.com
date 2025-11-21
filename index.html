@@ -750,6 +750,35 @@
         }
         .en .es-only { display: none !important; }
         .es .en-only { display: none !important; }
+        /* Nueva sección para la Galería Virtual 3D */
+        #galeria-virtual {
+            background-color: var(--secondary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 80px 0;
+        }
+        #galeria-virtual h2 {
+            color: var(--light-text-color);
+            margin-bottom: 30px;
+        }
+        #galeria-virtual h2::after {
+            background-color: var(--accent-color); /* Usa el color de acento */
+        }
+        #galeria-virtual p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        #galeria-virtual .btn {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+        }
+        #galeria-virtual .btn:hover {
+             background-color: #e0b55f; /* Un tono más oscuro del acento */
+             color: var(--secondary-color);
+             transform: translateY(-2px);
+        }
     </style>
 </head>
 <body class="es">
@@ -787,6 +816,13 @@
                             <a href="#biografia">
                                 <span class="es-only">Biografía</span>
                                 <span class="en-only">Biography</span>
+                            </a>
+                        </li>
+                        <!-- NUEVA PESTAÑA AÑADIDA -->
+                        <li>
+                            <a href="#galeria-virtual">
+                                <span class="es-only">Galería Virtual 3D</span>
+                                <span class="en-only">3D Virtual Gallery</span>
                             </a>
                         </li>
                         <li>
@@ -1091,7 +1127,7 @@
                 <h2 class="en-only">Contact Jesnagar</h2>
                 <div class="contact-grid">
                     <div class="contact-form">
-                        <form action="https://formspree.io/f/abc123xyz" method="POST"> <!-- ✅ CAMBIADO AL NUEVO FORMULARIO -->
+                        <form action="https://formspree.io/f/xovykayo" method="POST"> <!-- ✅ ID DE FORMSPREE ACTUALIZADO -->
                             <label for="name" class="es-only">Nombre:</label>
                             <label for="name" class="en-only">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -1138,6 +1174,19 @@
                 </div>
             </div>
         </section>
+
+        <!-- Nueva sección de Galería Virtual 3D -->
+        <section id="galeria-virtual">
+            <div class="container">
+                <h2 class="es-only">Galería Virtual 3D</h2>
+                <h2 class="en-only">3D Virtual Gallery</h2>
+                <p class="es-only">Sumérgete en una experiencia inmersiva donde mis pinturas cobran vida en un espacio tridimensional. Explora mi obra desde una perspectiva única y emocional.</p>
+                <p class="en-only">Immerse yourself in an immersive experience where my paintings come to life in a three-dimensional space. Explore my work from a unique and emotional perspective.</p>
+                <a href="https://www.artsteps.com/view/691f3b6797a7abda358d6389?currentUser" target="_blank" class="btn es-only">Visitar Galería 3D</a>
+                <a href="https://www.artsteps.com/view/691f3b6797a7abda358d6389?currentUser" target="_blank" class="btn en-only">Visit 3D Gallery</a>
+            </div>
+        </section>
+
     </main>
     <!-- Lightbox -->
     <div id="lightbox" onclick="closeLightbox()">
@@ -1152,7 +1201,7 @@
             <h3 class="en-only">Get my digital catalogue</h3>
             <p class="es-only">Obtén un PDF con mi biografía profesional y obras disponibles.</p>
             <p class="en-only">Receive a PDF with my professional biography and available works.</p>
-            <form class="popup-form" action="https://formspree.io/f/abc123xyz" method="POST"> <!-- ✅ CAMBIADO AL NUEVO FORMULARIO -->
+            <form class="popup-form" action="https://formspree.io/f/xovykayo" method="POST"> <!-- ✅ ID DE FORMSPREE ACTUALIZADO -->
                 <input type="email" name="email" placeholder="Tu email" required>
                 <input type="hidden" name="_subject" value="Solicitud de catálogo Jesnagar">
                 <button type="submit" class="es-only">Enviar catálogo</button>
@@ -1193,6 +1242,8 @@
                     <li><a href="#colecciones">Colecciones / Collections</a></li>
                     <li><a href="#autenticidad">Autenticidad / Authenticity</a></li>
                     <li><a href="#biografia">Biografía / Biography</a></li>
+                    <!-- Añadido en footer también -->
+                    <li><a href="#galeria-virtual">Galería Virtual 3D / 3D Virtual Gallery</a></li>
                     <li><a href="#contacto">Contacto / Contact</a></li>
                     <li><a href="blog/index.html">Blog</a></li> <!-- ✅ AÑADIDO EN FOOTER -->
                 </ul>
