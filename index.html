@@ -133,6 +133,17 @@
             color: var(--primary-color);
             border: 1px solid var(--primary-color);
         }
+        .saatchi-mention {
+            margin: 12px 0;
+            font-size: 0.95em;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .saatchi-mention a {
+            color: inherit;
+            text-decoration: underline;
+            font-weight: 600;
+        }
         header {
             background-color: var(--card-background);
             padding: 18px 0;
@@ -890,7 +901,7 @@
                         <div class="gallery-item-info">
                             <h3>Vista de Cantillana</h3>
                             <p class="category-year es-only">Paisaje • Óleo sobre madera • 2003</p>
-                            <p class="category-year en-only">Landscape • Oil on wood • 2003</p> <!-- ✅ CORREGIDO -->
+                            <p class="category-year en-only">Landscape • Oil on wood • 2003</p>
                             <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
                             <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
                             <p>102 x 80 cm</p>
@@ -916,7 +927,7 @@
                         <div class="gallery-item-info">
                             <h3>Vista de Cantillana</h3>
                             <p class="category-year es-only">Paisaje • Óleo sobre madera • 2010</p>
-                            <p class="category-year en-only">Landscape • Oil on wood • 2010</p> <!-- ✅ CORREGIDO -->
+                            <p class="category-year en-only">Landscape • Oil on wood • 2010</p>
                             <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
                             <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
                             <p>100 x 50 cm</p>
@@ -950,15 +961,21 @@
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
                     </div>
+                    <!-- 🔸 OBRA ACTUALIZADA: Granadas en Ventana -->
                     <div class="gallery-item" onclick="openLightbox('img/jesnagar-granadas-en-ventana-100x80-2016.jpg')">
-                        <img src="img/jesnagar-granadas-en-ventana-100x80-2016.jpg" alt="Granadas en Ventana – Bodegón simbólico en óleo sobre lienzo – Figuración Expresiva – Jesnagar" loading="lazy">
+                        <img src="img/jesnagar-granadas-en-ventana-100x80-2016.jpg" alt="Granadas en Ventana – Bodegón simbólico en óleo sobre madera – Figuración Expresiva – Jesnagar" loading="lazy">
                         <div class="gallery-item-info">
                             <h3>Granadas en Ventana</h3>
-                            <p class="category-year es-only">Bodegón • Óleo sobre lienzo • 2016</p>
-                            <p class="category-year en-only">Still life • Oil on canvas • 2016</p>
+                            <p class="category-year es-only">Bodegón • Óleo sobre madera • 2016</p>
+                            <p class="category-year en-only">Still life • Oil on wood • 2016</p>
                             <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
                             <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>100 x 80 cm</p>
+                            <p>100 x 81 cm</p>
+
+                            <!-- ✅ Mención a Saatchi Art -->
+                            <p class="saatchi-mention es-only">Obra disponible internacionalmente en <a href="https://www.saatchiart.com/en-es/jesnagar" target="_blank">Saatchi Art</a>.</p>
+                            <p class="saatchi-mention en-only">Internationally available through <a href="https://www.saatchiart.com/en-es/jesnagar" target="_blank">Saatchi Art</a>.</p>
+
                             <a href="#contacto" class="btn btn-light es-only">Solicitar ficha técnica y disponibilidad</a>
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
@@ -966,6 +983,7 @@
                 </div>
             </div>
         </section>
+        <!-- Resto del código sin cambios -->
         <section id="colecciones">
             <div class="container">
                 <h2 class="es-only">Trayectoria y Presencia en Plataformas Profesionales</h2>
@@ -1127,7 +1145,7 @@
                 <h2 class="en-only">Contact Jesnagar</h2>
                 <div class="contact-grid">
                     <div class="contact-form">
-                        <form action="https://formspree.io/f/xovykayo" method="POST"> <!-- ✅ ID DE FORMSPREE ACTUALIZADO -->
+                        <form action="https://formspree.io/f/xovykayo" method="POST">
                             <label for="name" class="es-only">Nombre:</label>
                             <label for="name" class="en-only">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -1147,7 +1165,7 @@
                             <div>
                                 <strong class="es-only">Email</strong>
                                 <strong class="en-only">Email</strong>
-                                <p>contacto@jesnagar.com</p> <!-- ✅ CORREGIDO -->
+                                <p>contacto@jesnagar.com</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
@@ -1155,7 +1173,7 @@
                             <div>
                                 <strong class="es-only">Teléfono</strong>
                                 <strong class="en-only">Phone</strong>
-                                <p>+34 613 03 94 83</p> <!-- ✅ CORREGIDO -->
+                                <p>+34 613 03 94 83</p>
                             </div>
                         </div>
                         <div class="contact-info-item">
@@ -1174,7 +1192,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Nueva sección de Galería Virtual 3D -->
         <section id="galeria-virtual">
             <div class="container">
@@ -1186,7 +1203,6 @@
                 <a href="https://www.artsteps.com/view/691f3b6797a7abda358d6389?currentUser" target="_blank" class="btn en-only">Visit 3D Gallery</a>
             </div>
         </section>
-
     </main>
     <!-- Lightbox -->
     <div id="lightbox" onclick="closeLightbox()">
@@ -1201,7 +1217,7 @@
             <h3 class="en-only">Get my digital catalogue</h3>
             <p class="es-only">Obtén un PDF con mi biografía profesional y obras disponibles.</p>
             <p class="en-only">Receive a PDF with my professional biography and available works.</p>
-            <form class="popup-form" action="https://formspree.io/f/xovykayo" method="POST"> <!-- ✅ ID DE FORMSPREE ACTUALIZADO -->
+            <form class="popup-form" action="https://formspree.io/f/xovykayo" method="POST">
                 <input type="email" name="email" placeholder="Tu email" required>
                 <input type="hidden" name="_subject" value="Solicitud de catálogo Jesnagar">
                 <button type="submit" class="es-only">Enviar catálogo</button>
@@ -1242,18 +1258,17 @@
                     <li><a href="#colecciones">Colecciones / Collections</a></li>
                     <li><a href="#autenticidad">Autenticidad / Authenticity</a></li>
                     <li><a href="#biografia">Biografía / Biography</a></li>
-                    <!-- Añadido en footer también -->
                     <li><a href="#galeria-virtual">Galería Virtual 3D / 3D Virtual Gallery</a></li>
                     <li><a href="#contacto">Contacto / Contact</a></li>
-                    <li><a href="blog/index.html">Blog</a></li> <!-- ✅ AÑADIDO EN FOOTER -->
+                    <li><a href="blog/index.html">Blog</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4 class="es-only">Contacto</h4>
                 <h4 class="en-only">Contact</h4>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> contacto@jesnagar.com</li> <!-- ✅ CORREGIDO -->
-                    <li><i class="fas fa-phone-alt"></i> +34 613 03 94 83</li> <!-- ✅ CORREGIDO -->
+                    <li><i class="fas fa-envelope"></i> contacto@jesnagar.com</li>
+                    <li><i class="fas fa-phone-alt"></i> +34 613 03 94 83</li>
                     <li><i class="fas fa-map-marker-alt"></i> Sevilla, España</li>
                 </ul>
             </div>
