@@ -10,13 +10,13 @@
     <meta property="og:description" content="Reflexiones íntimas sobre mi arte, mi infancia en Cantillana, las técnicas ancestrales que uso y cómo el paisaje andaluz inspira cada pincelada.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jesnagar.com/blog/index.html">
-    <meta property="og:image" content="https://jesnagar.com/img/blog/jesnagar-blog-header.jpg"> <!-- ✅ Ruta corregida -->
+    <meta property="og:image" content="https://jesnagar.com/img/blog/jesnagar-blog-header.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blog de Jesnagar | Pintor de Cantillana: Arte, Memoria y Proceso Creativo">
     <meta name="twitter:description" content="Reflexiones íntimas sobre mi arte, mi infancia en Cantillana, las técnicas ancestrales que uso y cómo el paisaje andaluz inspira cada pincelada.">
-    <meta name="twitter:image" content="https://jesnagar.com/img/blog/jesnagar-blog-header.jpg"> <!-- ✅ Ruta corregida -->
-    <!-- Importa el mismo CSS que tu web principal -->
-    <link rel="stylesheet" href="../style.css">
+    <meta name="twitter:image" content="https://jesnagar.com/img/blog/jesnagar-blog-header.jpg">
+    <!-- ⬇️ ENLACE AL NUEVO ARCHIVO CSS ⬇️ -->
+    <link rel="stylesheet" href="../css/estilos.css">
     <!-- Mantén las mismas fuentes e iconos que tu web principal -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -73,10 +73,10 @@
                 <p class="es-only">Reflexiones sobre mi proceso creativo, inspiraciones y el mundo del arte.</p>
                 <p class="en-only">Reflections on my creative process, inspirations, and the art world.</p>
                 <!-- Imagen de encabezado del blog -->
-                <img src="../img/blog/jesnagar-blog-header.jpg" 
-                     alt="Jesnagar - Blog de arte: reflexiones sobre el proceso creativo en Cantillana" 
+                <img src="../img/blog/jesnagar-blog-header.jpg"
+                     alt="Jesnagar - Blog de arte: reflexiones sobre el proceso creativo en Cantillana"
                      class="blog-header-image"
-                     loading="lazy"> <!-- ✅ Ruta corregida -->
+                     loading="lazy">
             </div>
         </section>
 
@@ -202,13 +202,13 @@
                     body.classList.replace('es', 'en');
                     langToggle.textContent = 'ES';
                     document.title = "Jesnagar's Blog | Art, Reflections and Creative Process";
-                    document.querySelector('meta[name="description"]').setAttribute('content', 
+                    document.querySelector('meta[name="description"]').setAttribute('content',
                         "Intimate reflections on my artistic process, ancestral techniques, and life in Cantillana, Andalusia.");
                 } else {
                     body.classList.replace('en', 'es');
                     langToggle.textContent = 'EN';
                     document.title = "Blog de Jesnagar | Pintor de Cantillana: Arte, Memoria y Proceso Creativo";
-                    document.querySelector('meta[name="description"]').setAttribute('content', 
+                    document.querySelector('meta[name="description"]').setAttribute('content',
                         "Reflexiones íntimas sobre mi arte, mi infancia en Cantillana, las técnicas ancestrales que uso y cómo el paisaje andaluz inspira cada pincelada.");
                 }
             });
