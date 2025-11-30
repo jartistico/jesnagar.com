@@ -13,11 +13,13 @@
     --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
     --border-radius: 12px;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: var(--font-main);
     line-height: 1.7;
@@ -28,15 +30,18 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 25px;
 }
+
 section {
     padding: 100px 0;
     position: relative;
 }
+
 h1, h2, h3, h4 {
     font-family: var(--font-headings);
     color: var(--secondary-color);
@@ -44,7 +49,9 @@ h1, h2, h3, h4 {
     line-height: 1.2;
     letter-spacing: 0.5px;
 }
+
 h1 { font-size: 4.5em; font-weight: 700; }
+
 h2 {
     font-size: 3.2em;
     text-align: center;
@@ -53,6 +60,7 @@ h2 {
     font-weight: 700;
     text-transform: none;
 }
+
 h2::after {
     content: '';
     display: block;
@@ -63,6 +71,7 @@ h2::after {
     border-radius: 3px;
     opacity: 0.8;
 }
+
 .btn {
     display: inline-block;
     background-color: var(--primary-color);
@@ -79,38 +88,45 @@ h2::after {
     letter-spacing: 0.8px;
     font-size: 0.95em;
 }
+
 .btn:hover {
     background-color: #5A4AD6;
     box-shadow: var(--shadow-hover);
     transform: translateY(-2px);
 }
+
 .btn-outline {
     background-color: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
     box-shadow: none;
 }
+
 .btn-outline:hover {
     background-color: var(--primary-color);
     color: var(--light-text-color);
     box-shadow: var(--shadow-light);
 }
+
 .btn-light {
     background-color: var(--light-text-color);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
 }
+
 .saatchi-mention {
     margin: 12px 0;
     font-size: 0.95em;
     color: var(--primary-color);
     font-weight: 600;
 }
+
 .saatchi-mention a {
     color: inherit;
     text-decoration: underline;
     font-weight: 600;
 }
+
 header {
     background-color: var(--card-background);
     padding: 18px 0;
@@ -123,6 +139,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     font-family: var(--font-headings);
     font-size: 2.2em;
@@ -132,16 +149,20 @@ header {
     letter-spacing: -0.5px;
     transition: color 0.3s ease;
 }
+
 .logo:hover {
     color: var(--secondary-color);
 }
+
 nav ul {
     list-style: none;
     display: flex;
 }
+
 nav ul li {
     margin-left: 40px;
 }
+
 nav ul li a {
     text-decoration: none;
     color: var(--secondary-color);
@@ -151,6 +172,7 @@ nav ul li a {
     position: relative;
     padding-bottom: 5px;
 }
+
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -162,13 +184,16 @@ nav ul li a::after {
     transition: width 0.3s ease;
     border-radius: 2px;
 }
+
 nav ul li a:hover::after,
 nav ul li a.active-link::after {
     width: 100%;
 }
+
 nav ul li a:hover {
     color: var(--primary-color);
 }
+
 .lang-switch {
     background: none;
     border: none;
@@ -181,11 +206,12 @@ nav ul li a:hover {
     transition: background 0.2s;
     font-weight: 600;
 }
+
 .lang-switch:hover {
     background: #f0f0f0;
 }
+
 #inicio {
-    /* 🔥 CAMBIADO: Nueva imagen de cabecera y tamaño ajustado */
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.75)), url('../img/cabecera-jesnagar.jpg') no-repeat center center / 1500px 500px;
     color: var(--light-text-color);
     text-align: center;
@@ -194,11 +220,13 @@ nav ul li a:hover {
     align-items: center;
     min-height: 90vh;
 }
+
 #inicio .hero-content {
     max-width: 900px;
     margin: 0 auto;
     animation: fadeInScale 1.2s ease-out;
 }
+
 #inicio h1 {
     font-size: 5.5em;
     margin-bottom: 25px;
@@ -206,6 +234,7 @@ nav ul li a:hover {
     line-height: 1.1;
     text-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 #inicio p {
     font-size: 1.8em;
     margin-bottom: 50px;
@@ -215,11 +244,13 @@ nav ul li a:hover {
     margin-right: auto;
     font-weight: 300;
 }
+
 #galeria,
 #tienda,
 #video-artistico {
     background-color: var(--background-light);
 }
+
 .gallery-intro,
 .shop-intro {
     text-align: center;
@@ -229,7 +260,7 @@ nav ul li a:hover {
     line-height: 1.7;
 }
 
-/* ✅ ESTILO PARA HACER EL VIDEO RECTANGULAR (16:9) */
+/* ✅ VIDEO RECTANGULAR CON IMAGEN DE PORTADA */
 .video-wrapper {
     max-width: 800px;
     margin: 40px auto 60px;
@@ -241,7 +272,7 @@ nav ul li a:hover {
 .video-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* Aspect ratio 16:9 */
+    padding-top: 56.25%; /* 16:9 */
     background-color: #000;
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -257,35 +288,46 @@ nav ul li a:hover {
     object-position: center;
 }
 
+/* ✅ GALERÍA CORREGIDA */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 40px;
 }
+
 .gallery-item {
     background-color: var(--card-background);
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-light);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
 }
+
 .gallery-item:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
 }
-.gallery-item img {
+
+.gallery-item-image {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.gallery-item-image img {
     width: 100%;
     height: auto;
     display: block;
     transition: transform 0.3s ease;
 }
-.gallery-item:hover img {
+
+.gallery-item-image:hover img {
     transform: scale(1.02);
 }
+
 .gallery-item-info {
     padding: 25px;
 }
+
 .gallery-item-info h3 {
     font-size: 1.6em;
     margin-bottom: 8px;
@@ -293,22 +335,26 @@ nav ul li a:hover {
     font-weight: 600;
     font-family: var(--font-headings);
 }
+
 .gallery-item-info .category-year {
     font-size: 0.9em;
     color: #777;
     margin-bottom: 8px;
 }
+
 .gallery-item-info .style-tag {
     font-size: 0.9em;
     color: var(--primary-color);
     margin-bottom: 10px;
     font-weight: 600;
 }
+
 .gallery-item-info p:not(.status):not(.category-year):not(.style-tag) {
     font-size: 0.95em;
     color: var(--text-color);
     margin-bottom: 6px;
 }
+
 .gallery-item-info .status {
     font-style: italic;
     color: #888;
@@ -316,7 +362,8 @@ nav ul li a:hover {
     margin-top: 10px;
     display: block;
 }
-/* Estilos para el lightbox mejorado */
+
+/* Lightbox */
 #lightbox {
     position: fixed;
     top: 0;
@@ -330,6 +377,7 @@ nav ul li a:hover {
     z-index: 9999;
     cursor: pointer;
 }
+
 #lightbox img {
     max-width: 90%;
     max-height: 90%;
@@ -337,6 +385,7 @@ nav ul li a:hover {
     box-shadow: 0 0 30px rgba(0,0,0,0.8);
     cursor: default;
 }
+
 #close-lightbox {
     position: absolute;
     top: 30px;
@@ -349,7 +398,7 @@ nav ul li a:hover {
     padding: 5px 10px;
     border-radius: 50%;
 }
-/* Botones de navegación */
+
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -368,16 +417,19 @@ nav ul li a:hover {
     justify-content: center;
     transition: background 0.3s ease;
 }
+
 .nav-btn:hover {
     background: rgba(255,255,255,0.2);
 }
+
 #prev-btn {
     left: 30px;
 }
+
 #next-btn {
     right: 30px;
 }
-/* Contador de imágenes */
+
 #image-counter {
     position: absolute;
     bottom: 20px;
@@ -390,10 +442,13 @@ nav ul li a:hover {
     font-size: 0.9em;
     z-index: 10000;
 }
+
+/* Resto de estilos (no cambian) */
 #colecciones {
     background-color: var(--card-background);
     text-align: center;
 }
+
 .elportico-showcase {
     background: var(--card-background);
     padding: 40px;
@@ -401,6 +456,7 @@ nav ul li a:hover {
     box-shadow: var(--shadow-light);
     margin-bottom: 50px;
 }
+
 .elportico-header {
     display: flex;
     align-items: center;
@@ -409,47 +465,57 @@ nav ul li a:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .elportico-header img {
     height: 60px;
     filter: grayscale(100%) opacity(0.8);
 }
+
 .elportico-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 25px;
     margin-top: 20px;
 }
+
 .elportico-grid img {
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 .elportico-grid p {
     font-size: 0.9em;
     margin-top: 10px;
     color: var(--text-color);
 }
+
 #autenticidad {
     background-color: var(--background-light);
     text-align: center;
 }
+
 #autenticidad .container {
     max-width: 800px;
 }
+
 #autenticidad p {
     font-size: 1.1em;
     line-height: 1.8;
     margin-bottom: 20px;
 }
+
 #biografia {
     background-color: var(--background-light);
 }
+
 .bio-content {
     display: flex;
     align-items: flex-start;
     gap: 60px;
     flex-wrap: wrap;
 }
+
 .bio-content img {
     flex: 1;
     min-width: 350px;
@@ -460,16 +526,19 @@ nav ul li a:hover {
     object-fit: cover;
     border: 5px solid var(--primary-color);
 }
+
 .bio-text {
     flex: 2;
     min-width: 300px;
 }
+
 .bio-text p {
     margin-bottom: 20px;
     color: var(--text-color);
     font-size: 1.05em;
     line-height: 1.8;
 }
+
 .bio-text h3 {
     font-family: var(--font-headings);
     color: var(--primary-color);
@@ -479,6 +548,7 @@ nav ul li a:hover {
     border-left: 5px solid var(--accent-color);
     padding-left: 15px;
 }
+
 .bio-text h4 {
     font-family: var(--font-main);
     color: var(--secondary-color);
@@ -487,6 +557,7 @@ nav ul li a:hover {
     position: relative;
     padding-bottom: 8px;
 }
+
 .bio-section-list {
     margin-bottom: 40px;
     background-color: var(--background-light);
@@ -494,11 +565,13 @@ nav ul li a:hover {
     border-radius: var(--border-radius);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
+
 .bio-section-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .bio-section-list ul li {
     margin-bottom: 12px;
     color: var(--text-color);
@@ -506,6 +579,7 @@ nav ul li a:hover {
     align-items: flex-start;
     font-size: 1em;
 }
+
 .bio-section-list ul li i {
     margin-right: 15px;
     color: var(--primary-color);
@@ -513,25 +587,30 @@ nav ul li a:hover {
     flex-shrink: 0;
     margin-top: 3px;
 }
+
 .bio-section-list ul li strong {
     color: var(--secondary-color);
     font-weight: 600;
 }
+
 #contacto {
     background-color: var(--background-light);
 }
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 70px;
     align-items: flex-start;
 }
+
 .contact-form {
     background-color: var(--card-background);
     padding: 40px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
 }
+
 .contact-form label {
     display: block;
     margin-bottom: 10px;
@@ -539,6 +618,7 @@ nav ul li a:hover {
     color: var(--secondary-color);
     font-size: 1.05em;
 }
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -551,6 +631,7 @@ nav ul li a:hover {
     color: var(--text-color);
     background-color: #FAFAFA;
 }
+
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
@@ -558,16 +639,19 @@ nav ul li a:hover {
     box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
     background-color: var(--card-background);
 }
+
 .contact-form textarea {
     resize: vertical;
     min-height: 150px;
 }
+
 .contact-info-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: 30px;
     color: var(--text-color);
 }
+
 .contact-info-item i {
     font-size: 1.8em;
     color: var(--primary-color);
@@ -576,6 +660,7 @@ nav ul li a:hover {
     text-align: center;
     flex-shrink: 0;
 }
+
 .contact-info-item strong {
     display: block;
     color: var(--secondary-color);
@@ -583,6 +668,7 @@ nav ul li a:hover {
     margin-bottom: 5px;
     font-weight: 600;
 }
+
 .contact-info-map {
     background-color: #e0e0e0;
     border-radius: var(--border-radius);
@@ -594,12 +680,14 @@ nav ul li a:hover {
     font-style: italic;
     margin-top: 40px;
 }
+
 footer {
     background-color: var(--background-dark);
     color: var(--light-text-color);
     padding: 80px 0 30px;
     text-align: center;
 }
+
 footer h3 {
     color: var(--light-text-color);
     font-size: 2.5em;
@@ -607,6 +695,7 @@ footer h3 {
     font-family: var(--font-headings);
     font-weight: 700;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -616,11 +705,13 @@ footer h3 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 40px;
 }
+
 .footer-section {
     flex: 1;
     min-width: 280px;
     margin: 0 25px 30px 0;
 }
+
 .footer-section h4 {
     color: var(--accent-color);
     margin-bottom: 25px;
@@ -628,11 +719,13 @@ footer h3 {
     font-family: var(--font-headings);
     font-weight: 600;
 }
+
 .footer-section ul li {
     margin-bottom: 12px;
     display: flex;
     align-items: flex-start;
 }
+
 .footer-section ul li i {
     margin-right: 15px;
     color: var(--primary-color);
@@ -640,11 +733,13 @@ footer h3 {
     flex-shrink: 0;
     margin-top: 3px;
 }
+
 .social-icons {
     margin-top: 25px;
     display: flex;
     gap: 20px;
 }
+
 .social-icons a {
     color: var(--light-text-color);
     font-size: 1.6em;
@@ -657,17 +752,20 @@ footer h3 {
     justify-content: center;
     transition: all 0.3s ease;
 }
+
 .social-icons a:hover {
     color: var(--accent-color);
     transform: translateY(-3px) scale(1.1);
     background-color: rgba(108, 92, 231, 0.8);
 }
+
 .menu-toggle {
     display: none;
     font-size: 2.2em;
     color: var(--secondary-color);
     cursor: pointer;
 }
+
 #newsletter-popup {
     position: fixed;
     top: 0;
@@ -680,6 +778,7 @@ footer h3 {
     align-items: center;
     z-index: 9998;
 }
+
 .popup-content {
     background: white;
     padding: 40px;
@@ -690,6 +789,7 @@ footer h3 {
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
     position: relative;
 }
+
 #close-popup {
     position: absolute;
     top: 15px;
@@ -698,17 +798,21 @@ footer h3 {
     cursor: pointer;
     color: #aaa;
 }
+
 #close-popup:hover {
     color: #333;
 }
+
 .popup-content h3 {
     margin-bottom: 20px;
     color: var(--secondary-color);
 }
+
 .popup-content p {
     margin-bottom: 20px;
     color: var(--text-color);
 }
+
 .popup-form input {
     width: 100%;
     padding: 12px;
@@ -717,6 +821,7 @@ footer h3 {
     border-radius: 6px;
     font-size: 1em;
 }
+
 .popup-form button {
     background: var(--primary-color);
     color: white;
@@ -727,6 +832,7 @@ footer h3 {
     font-weight: 600;
     margin-top: 10px;
 }
+
 #floating-social {
     position: fixed;
     bottom: 30px;
@@ -736,6 +842,7 @@ footer h3 {
     flex-direction: column;
     gap: 12px;
 }
+
 .social-btn {
     width: 52px;
     height: 52px;
@@ -748,19 +855,24 @@ footer h3 {
     transition: all 0.3s ease;
     font-size: 1.5em;
 }
+
 .social-btn i {
     color: white;
 }
+
 .instagram { background-color: #E1306C; }
 .facebook { background-color: #4267B2; }
 .whatsapp { background-color: #25D366; }
+
 .social-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
+
 .instagram:hover { background-color: #d11d5b; }
 .facebook:hover { background-color: #365899; }
 .whatsapp:hover { background-color: #128C7E; }
+
 @media (max-width: 992px) {
     nav ul { display: none; }
     .menu-toggle { display: block; }
@@ -775,6 +887,7 @@ footer h3 {
         gap: 15px;
     }
 }
+
 @media (max-width: 600px) {
     section { padding: 80px 0; }
     h1 { font-size: 2.8em; }
@@ -797,6 +910,7 @@ footer h3 {
         margin: 30px auto 40px;
     }
 }
+
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -807,31 +921,38 @@ footer h3 {
         transform: scale(1) translateY(0);
     }
 }
+
 .en .es-only { display: none !important; }
 .es .en-only { display: none !important; }
+
 #galeria-virtual {
     background-color: var(--secondary-color);
     color: var(--light-text-color);
     text-align: center;
     padding: 80px 0;
 }
+
 #galeria-virtual h2 {
     color: var(--light-text-color);
     margin-bottom: 30px;
 }
+
 #galeria-virtual h2::after {
     background-color: var(--accent-color);
 }
+
 #galeria-virtual p {
     font-size: 1.2em;
     max-width: 700px;
     margin: 0 auto 40px;
     line-height: 1.7;
 }
+
 #galeria-virtual .btn {
     background-color: var(--accent-color);
     color: var(--secondary-color);
 }
+
 #galeria-virtual .btn:hover {
      background-color: #e0b55f;
      color: var(--secondary-color);

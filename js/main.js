@@ -41,7 +41,7 @@ function prevImage() {
 
 // Función para abrir una sola imagen (para otras obras)
 function openLightbox(src) {
-    // Para mantener la compatibilidad, creamos un array con una sola imagen
+    // Creamos un array con una sola imagen
     currentGalleryImages = [src];
     currentImageIndex = 0;
     showCurrentImage();

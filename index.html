@@ -24,7 +24,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- ⬇️ ENLACE AL NUEVO ARCHIVO CSS ⬇️ -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body class="es">
@@ -54,7 +53,6 @@
             <div class="container hero-content">
                 <h1 class="es-only">Arte que Transforma Emociones</h1>
                 <h1 class="en-only">Art That Transforms Emotions</h1>
-                <!-- 🔥 NUEVO SUBTÍTULO -->
                 <p class="es-only">
                     Pintura andaluza auténtica: Luz del Sur, Materia y Simbolismo.
                 </p>
@@ -65,7 +63,8 @@
                 <a href="#contacto" class="btn btn-outline" style="margin-left: 20px;">Contactar al Artista</a>
             </div>
         </section>
-        <!-- ✅ SECCIÓN DEL VIDEO RECTANGULAR CON IMAGEN DE PORTADA -->
+
+        <!-- ✅ VIDEO CORREGIDO -->
         <section id="video-artistico">
             <div class="container">
                 <h2 class="es-only">El Silencio que Habla</h2>
@@ -74,7 +73,6 @@
                 <p class="en-only">A moment of my dialogue with matter, light, and soul.</p>
                 <div class="video-wrapper">
                     <div class="video-container">
-                        <!-- 🔥 IMAGEN DE PORTADA: ASEGÚRATE DE TENER 'video-poster.jpg' EN LA CARPETA /img/ -->
                         <video controls poster="img/video-poster.jpg">
                             <source src="https://res.cloudinary.com/dailru7lx/video/upload/v1764531770/JESNAGAR-ARTISTA_txrpyd.mp4" type="video/mp4">
                             Tu navegador no soporta la reproducción de video.
@@ -83,22 +81,26 @@
                 </div>
             </div>
         </section>
+
+        <!-- ✅ GALERÍA CORREGIDA -->
         <section id="galeria">
             <div class="container">
                 <h2 class="es-only">Obras Destacadas</h2>
                 <h2 class="en-only">Featured Works</h2>
                 <div class="gallery-intro">
                     <p class="es-only">
-                        Mi obra se centra en la <strong>Figuración Expresiva Contemporánea</strong>, donde la realidad se transforma a través de la emoción, la luz y la textura. Explora mis paisajes andaluces, retratos y bodegones simbólicos, todos creados con una paleta cromática intensa y una técnica ancestral.
+                        Mi obra se centra en la <strong>Figuración Expresiva Contemporánea</strong>, donde la realidad se transforma a través de la emoción, la luz y la textura.
                     </p>
                     <p class="en-only">
-                        My work centers on <strong>Contemporary Expressive Figuration</strong>, where reality is transformed through emotion, light, and texture. Explore my Andalusian landscapes, portraits, and symbolic still lifes, all created with an intense color palette and ancestral techniques.
+                        My work centers on <strong>Contemporary Expressive Figuration</strong>, where reality is transformed through emotion, light, and texture.
                     </p>
                 </div>
                 <div class="gallery-grid">
-                    <!-- 🔥 PRIMERA OBRA: LA CHICA DEL GLOBO (NUEVA Y MÁS RECIENTE) -->
-                    <div class="gallery-item" onclick="openGallery(['img/Jesnagar-La-Chica-del-Globo-Original-Sculptural-Painting-with-Flamenco-Soul.jpg', 'img/Jesnagar-La-Chica-del-Globo-Art-for-Modern-Interiors-Andalusia.jpg', 'img/Jesnagar-La-Chica-del-Globo-Close-up-Screwed-on-Balloon-Symbolism.jpg', 'img/Jesnagar-La-Chica-del-Globo-Detail-3D-Sculptural-Element-Mixed-Media.jpg'])">
-                        <img src="img/Jesnagar-La-Chica-del-Globo-Original-Sculptural-Painting-with-Flamenco-Soul.jpg" alt="La chica del globo – Obra original de técnica mixta con intervención escultórica – Jesnagar" loading="lazy">
+                    <!-- 🔥 LA CHICA DEL GLOBO -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openGallery(['img/jesnagar-la-chica-del-globo-original-sculptural-painting-with-flamenco-soul.jpg', 'img/jesnagar-la-chica-del-globo-art-for-modern-interiors-andalusia.jpg', 'img/jesnagar-la-chica-del-globo-close-up-screwed-on-balloon-symbolism.jpg', 'img/jesnagar-la-chica-del-globo-detail-3d-sculptural-element-mixed-media.jpg'])">
+                            <img src="img/jesnagar-la-chica-del-globo-original-sculptural-painting-with-flamenco-soul.jpg" alt="La chica del globo – Obra original de técnica mixta con intervención escultórica – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>La chica del globo</h3>
                             <p class="category-year es-only">Técnica mixta con intervención escultórica • 2025</p>
@@ -112,9 +114,12 @@
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
                     </div>
-                    <!-- 🔸 SEGUNDA OBRA: SEVILLA DESDE EL RÍO (2002) -->
-                    <div class="gallery-item" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg')">
-                        <img src="img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg" alt="Sevilla desde el Río – Pintura de Sevilla en óleo sobre lienzo – Figuración Expresiva Contemporánea – Jesnagar" loading="lazy">
+
+                    <!-- 🔸 SEVILLA DESDE EL RÍO (2002) -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg')">
+                            <img src="img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg" alt="Sevilla desde el Río – Pintura de Sevilla en óleo sobre lienzo – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>Sevilla desde el Río</h3>
                             <p class="category-year es-only">Paisaje • Óleo sobre lienzo • 2002</p>
@@ -126,9 +131,12 @@
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
                     </div>
-                    <!-- 🔸 TERCERA OBRA: GRANADAS (2004) -->
-                    <div class="gallery-item" onclick="openLightbox('img/jesnagar-granadas-62x23-2004.jpg')">
-                        <img src="img/jesnagar-granadas-62x23-2004.jpg" alt="Granadas – Bodegón simbólico en óleo sobre madera – Figuración Expresiva Contemporánea – Jesnagar" loading="lazy">
+
+                    <!-- 🔸 GRANADAS (2004) -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-granadas-62x23-2004.jpg')">
+                            <img src="img/jesnagar-granadas-62x23-2004.jpg" alt="Granadas – Bodegón simbólico en óleo sobre madera – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>Granadas</h3>
                             <p class="category-year es-only">Bodegón • Óleo sobre madera • 2004</p>
@@ -140,9 +148,12 @@
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
                     </div>
-                    <!-- 🔸 CUARTA OBRA: VISTA DE CANTILLANA (2003) -->
-                    <div class="gallery-item" onclick="openLightbox('img/jesnagar-vista-de-cantillana-102x80-2003.jpg')">
-                        <img src="img/jesnagar-vista-de-cantillana-102x80-2003.jpg" alt="Vista de Cantillana – Paisaje andaluz en óleo sobre madera – Figuración Expresiva – Jesnagar" loading="lazy">
+
+                    <!-- 🔸 VISTA DE CANTILLANA (2003) -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-vista-de-cantillana-102x80-2003.jpg')">
+                            <img src="img/jesnagar-vista-de-cantillana-102x80-2003.jpg" alt="Vista de Cantillana – Paisaje andaluz en óleo sobre madera – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>Vista de Cantillana</h3>
                             <p class="category-year es-only">Paisaje • Óleo sobre madera • 2003</p>
@@ -154,9 +165,12 @@
                             <p class="status en-only">In private collection</p>
                         </div>
                     </div>
-                    <!-- 🔸 QUINTA OBRA: SEVILLA DESDE EL RÍO (2003) -->
-                    <div class="gallery-item" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-100x50-2003.jpg')">
-                        <img src="img/jesnagar-sevilla-desde-el-rio-100x50-2003.jpg" alt="Seville desde el Río – Pintura contemporánea de Sevilla en óleo – Figuración Expresiva – Jesnagar" loading="lazy">
+
+                    <!-- 🔸 SEVILLA DESDE EL RÍO (2003) -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-100x50-2003.jpg')">
+                            <img src="img/jesnagar-sevilla-desde-el-rio-100x50-2003.jpg" alt="Sevilla desde el Río (2003) – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>Sevilla desde el Río</h3>
                             <p class="category-year es-only">Paisaje • Óleo sobre lienzo • 2003</p>
@@ -168,9 +182,12 @@
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
                     </div>
-                    <!-- 🔸 SEXTA OBRA: VISTA DE CANTILLANA (2010) -->
-                    <div class="gallery-item" onclick="openLightbox('img/jesnagar-vista-de-cantillana-100x50-2010.jpg')">
-                        <img src="img/jesnagar-vista-de-cantillana-100x50-2010.jpg" alt="Vista de Cantillana – Paisaje simbólico en óleo sobre madera – Figuración Expresiva – Jesnagar" loading="lazy">
+
+                    <!-- 🔸 VISTA DE CANTILLANA (2010) -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-vista-de-cantillana-100x50-2010.jpg')">
+                            <img src="img/jesnagar-vista-de-cantillana-100x50-2010.jpg" alt="Vista de Cantillana (2010) – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>Vista de Cantillana</h3>
                             <p class="category-year es-only">Paisaje • Óleo sobre madera • 2010</p>
@@ -182,9 +199,12 @@
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
                     </div>
-                    <!-- 🔸 SÉPTIMA OBRA: GRANADAS (2015) -->
-                    <div class="gallery-item" onclick="openLightbox('img/jesnagar-granadas-61x50-2015.jpg')">
-                        <img src="img/jesnagar-granadas-61x50-2015.jpg" alt="Granadas – Bodegón simbólico en óleo sobre madera – Figuración Expresiva Contemporánea – Jesnagar" loading="lazy">
+
+                    <!-- 🔸 GRANADAS (2015) -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-granadas-61x50-2015.jpg')">
+                            <img src="img/jesnagar-granadas-61x50-2015.jpg" alt="Granadas (2015) – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>Granadas</h3>
                             <p class="category-year es-only">Bodegón • Óleo sobre madera • 2015</p>
@@ -196,9 +216,12 @@
                             <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
                         </div>
                     </div>
-                    <!-- 🔸 OCTAVA OBRA: GRANADAS EN VENTANA (2016) -->
-                    <div class="gallery-item" onclick="openLightbox('img/jesnagar-granadas-en-ventana-100x80-2016.jpg')">
-                        <img src="img/jesnagar-granadas-en-ventana-100x80-2016.jpg" alt="Granadas en Ventana – Bodegón simbólico en óleo sobre madera – Figuración Expresiva – Jesnagar" loading="lazy">
+
+                    <!-- 🔸 GRANADAS EN VENTANA (2016) -->
+                    <div class="gallery-item">
+                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-granadas-en-ventana-100x80-2016.jpg')">
+                            <img src="img/jesnagar-granadas-en-ventana-100x80-2016.jpg" alt="Granadas en Ventana – Jesnagar" loading="lazy">
+                        </div>
                         <div class="gallery-item-info">
                             <h3>Granadas en Ventana</h3>
                             <p class="category-year es-only">Bodegón • Óleo sobre madera • 2016</p>
@@ -215,7 +238,8 @@
                 </div>
             </div>
         </section>
-        <!-- 🔥 SECCIÓN TIENDA COMPLETA Y FUNCIONAL -->
+
+        <!-- RESTO DE SECCIONES (sin cambios funcionales) -->
         <section id="tienda">
             <div class="container">
                 <h2 class="es-only">Adquiere obra original</h2>
@@ -256,7 +280,7 @@
                 </p>
             </div>
         </section>
-        <!-- ✅ SECCIONES COMPLETAS (sin puntos suspensivos) -->
+
         <section id="colecciones">
             <div class="container">
                 <h2 class="es-only">Trayectoria y Presencia en Plataformas Profesionales</h2>
@@ -318,6 +342,7 @@
                 </div>
             </div>
         </section>
+
         <section id="autenticidad">
             <div class="container">
                 <h2 class="es-only">Certificado de Autenticidad</h2>
@@ -350,6 +375,7 @@
                 </p>
             </div>
         </section>
+
         <section id="biografia">
             <div class="container">
                 <h2 class="es-only">Sobre Jesnagar</h2>
@@ -412,6 +438,7 @@
                 </div>
             </div>
         </section>
+
         <section id="contacto">
             <div class="container">
                 <h2 class="es-only">Contacta con Jesnagar</h2>
@@ -465,6 +492,7 @@
                 </div>
             </div>
         </section>
+
         <section id="galeria-virtual">
             <div class="container">
                 <h2 class="es-only">Galería Virtual 3D</h2>
@@ -476,23 +504,20 @@
             </div>
         </section>
     </main>
+
     <!-- Lightbox -->
     <div id="lightbox" onclick="closeLightbox()">
-        <!-- Botón de cerrar -->
         <span id="close-lightbox">&times;</span>
-        <!-- Botón de flecha izquierda (anterior) -->
         <button id="prev-btn" class="nav-btn" onclick="prevImage(); event.stopPropagation();">
             <i class="fas fa-chevron-left"></i>
         </button>
-        <!-- Botón de flecha derecha (siguiente) -->
         <button id="next-btn" class="nav-btn" onclick="nextImage(); event.stopPropagation();">
             <i class="fas fa-chevron-right"></i>
         </button>
-        <!-- Contador de imágenes -->
         <div id="image-counter">1 / 1</div>
-        <!-- Imagen -->
-        <img id="lightbox-img" src="" alt="Enlarge artwork">
+        <img id="lightbox-img" src="" alt="Ampliar obra">
     </div>
+
     <!-- POPUP DE NEWSLETTER -->
     <div id="newsletter-popup">
         <div class="popup-content">
@@ -509,6 +534,7 @@
             </form>
         </div>
     </div>
+
     <!-- BOTONES FLOTANTES -->
     <div id="floating-social">
         <a href="https://wa.me/34613039483" target="_blank" class="social-btn whatsapp" title="Contactar por WhatsApp">
@@ -521,6 +547,7 @@
             <i class="fab fa-instagram"></i>
         </a>
     </div>
+
     <footer>
         <div class="container footer-content">
             <div class="footer-section">
@@ -562,7 +589,7 @@
             <p>&copy; 2025 Jesnagar. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <!-- ⬇️ ENLACE AL NUEVO ARCHIVO JS ⬇️ -->
+
     <script src="js/main.js"></script>
 </body>
 </html>
