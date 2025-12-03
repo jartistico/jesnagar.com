@@ -1,0 +1,9 @@
+title: Jesnagar - Arte y Memoria
+email: contacto@jesnagar.com
+description: >-
+  Sitio web oficial del artista Jesnagar. Pintura andaluza, realismo mágico y música.
+baseurl: ""
+url: "https://jesnagar.com"
+theme: minima
+plugins:
+  - jekyll-feed
