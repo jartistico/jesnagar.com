@@ -1,0 +1,41 @@
+backend:
+  name: git-gateway
+  branch: main # O 'master', según diga tu repositorio
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: "https://www.jesnagar.com"
+display_url: "https://www.jesnagar.com"
+logo_url: "https://www.jesnagar.com/img/logo.png" # Si tienes logo, si no, borra esta línea
+
+# Configuración regional
+locale: "es"
+
+collections:
+  - name: "obras"
+    label: "🎨 Obras de Arte"
+    folder: "_obras"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Título (Español)", name: "title_es", widget: "string"}
+      - {label: "Title (English)", name: "title_en", widget: "string", required: false}
+      - {label: "Imagen de la Obra", name: "image", widget: "image"}
+      - {label: "Año", name: "year", widget: "number", value_type: "int"}
+      - {label: "Técnica", name: "technique", widget: "string", default: "Óleo sobre lienzo"}
+      - {label: "Dimensiones", name: "dimensions", widget: "string"}
+      - {label: "Estado", name: "status", widget: "select", options: ["🟢 Disponible", "🔴 Colección Privada", "🟡 Saatchi Art"], default: "🟢 Disponible"}
+      - {label: "Enlace a Spotify (Música)", name: "spotify_url", widget: "string", required: false, hint: "Pega aquí el enlace de la canción"}
+      - {label: "Descripción (Español)", name: "body_es", widget: "markdown"}
+      - {label: "Description (English)", name: "body_en", widget: "markdown", required: false}
+
+  - name: "blog"
+    label: "📝 Blog / Noticias"
+    folder: "_posts"
+    create: true
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {label: "Imagen Principal", name: "thumbnail", widget: "image", required: false}
+      - {label: "Cuerpo del texto", name: "body", widget: "markdown"}
