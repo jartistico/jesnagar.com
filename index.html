@@ -25,6 +25,194 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* === ESTILOS ESPECÍFICOS PARA LA NUEVA GALERÍA === */
+        #galeria {
+            padding: 60px 0 80px;
+        }
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .obra-card {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .obra-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+        .obra-imagen {
+            height: 300px;
+            cursor: pointer;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .obra-imagen img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .obra-imagen:hover img {
+            transform: scale(1.02);
+        }
+        .obra-info {
+            padding: 20px;
+            color: var(--text-color);
+        }
+        .obra-info h3 {
+            font-size: 1.35em;
+            margin: 0 0 10px;
+            color: var(--secondary-color);
+            font-family: var(--font-headings);
+        }
+        .obra-info p {
+            margin: 0 0 14px;
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+        .obra-musica {
+            margin: 16px 0;
+        }
+        .obra-musica h4 {
+            font-size: 1em;
+            margin: 0 0 8px;
+            color: var(--secondary-color);
+            font-family: var(--font-main);
+        }
+        .obra-musica iframe {
+            border-radius: 8px;
+            width: 100%;
+            height: 120px;
+        }
+        .btn-light {
+            display: inline-block;
+            padding: 9px 18px;
+            font-size: 0.95em;
+            background: var(--background-light);
+            color: var(--primary-color);
+            text-decoration: none;
+            border: 1px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            transition: all 0.2s ease;
+        }
+        .btn-light:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        /* === RESPONSIVE === */
+        @media (max-width: 992px) {
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 576px) {
+            .galeria-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .obra-musica iframe {
+                height: 100px !important;
+            }
+        }
+
+        /* === LIGHTBOX CORREGIDO === */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: pointer;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 4px solid white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            cursor: default;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        #close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 2.5em;
+            cursor: pointer;
+            z-index: 10000;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        #prev-btn {
+            left: 30px;
+        }
+
+        #next-btn {
+            right: 30px;
+        }
+
+        #image-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            z-index: 10000;
+        }
+    </style>
 </head>
 <body class="es">
     <header>
@@ -93,144 +281,120 @@
                         Mi obra se centra en la <strong>Figuración Expresiva Contemporánea</strong>, donde la realidad se transforma a través de la emoción, la luz y la textura.
                     </p>
                     <p class="en-only">
-                        My work centers on <strong>Contemporary Expressive Figuration</strong>, where reality is transformed through emotion, light, and texture. 
-                        <strong>Collectors in Dubai and Riyadh value these symbolic narratives for their spiritual resonance.</strong>
+                        My work centers on <strong>Contemporary Expressive Figuration</strong>, where reality is transformed through emotion, light, and texture.
                     </p>
                 </div>
-                <div class="gallery-grid">
-                    <!-- 🔥 LA CHICA DEL GLOBO (GALERÍA MÚLTIPLE) -->
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openGallery([
+                <div class="galeria-grid">
+                    <!-- LA CHICA DEL GLOBO -->
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openGallery([
                             'img/jesnagar-la-chica-del-globo-original-sculptural-painting-with-flamenco-soul.jpg',
                             'img/jesnagar-la-chica-del-globo-art-for-modern-interiors-andalusia.jpg',
                             'img/jesnagar-la-chica-del-globo-close-up-screwed-on-balloon-symbolism.jpg',
                             'img/jesnagar-la-chica-del-globo-detail-3d-sculptural-element-mixed-media.jpg'
                         ])">
                             <img src="img/jesnagar-la-chica-del-globo-original-sculptural-painting-with-flamenco-soul.jpg" 
-                                 alt="La chica del globo – Obra original de técnica mixta con intervención escultórica – Jesnagar" 
-                                 loading="lazy">
+                                 alt="La chica del globo – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>La chica del globo</h3>
-                            <p class="category-year es-only">Técnica mixta con intervención escultórica • 2025</p>
-                            <p class="category-year en-only">Mixed media with sculptural intervention • 2025</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>80,5 x 100,5 cm</p>
-                            <p class="es-only">Obra única (One of a kind). Incluye Certificado de Autenticidad firmado por el artista.</p>
-                            <p class="en-only">One of a kind. Includes signed Certificate of Authenticity.</p>
-                            <a href="#contacto" class="btn btn-light es-only">Solicitar ficha técnica y disponibilidad</a>
-                            <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
+                            <p class="es-only">Técnica mixta con intervención escultórica • 2025<br>80,5 x 100,5 cm. Obra única.</p>
+                            <p class="en-only">Mixed media with sculptural intervention • 2025<br>80.5 x 100.5 cm. One of a kind.</p>
+                            <div class="obra-musica">
+                                <h4 class="es-only">Música inspirada en la obra</h4>
+                                <h4 class="en-only">Music inspired by the artwork</h4>
+                                <iframe src="https://open.spotify.com/embed/album/1CXY4TuheTWidm0rLfDEzb?utm_source=generator" 
+                                        width="100%" height="120" frameBorder="0" allow="autoplay; encrypted-media" loading="lazy"></iframe>
+                            </div>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
-                    <!-- 🔸 OTRAS OBRAS (SOLA IMAGEN) -->
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg')">
-                            <img src="img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg" 
-                                 alt="Sevilla desde el Río – Pintura de Sevilla en óleo sobre lienzo – Jesnagar" 
-                                 loading="lazy">
+                    <!-- OTRAS OBRAS -->
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg')">
+                            <img src="img/jesnagar-sevilla-desde-el-rio-84x54-2002.jpg" alt="Sevilla desde el Río – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>Sevilla desde el Río</h3>
-                            <p class="category-year es-only">Paisaje • Óleo sobre lienzo • 2002</p>
-                            <p class="category-year en-only">Landscape • Oil on canvas • 2002</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>84 x 54 cm</p>
-                            <p class="es-only">Obra en colección privada internacional (EE.UU.)</p>
-                            <p class="en-only">In international private collection (USA)</p>
+                            <p class="es-only">Óleo sobre lienzo • 2002<br>84 x 54 cm.</p>
+                            <p class="en-only">Oil on canvas • 2002<br>84 x 54 cm.</p>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-granadas-62x23-2004.jpg')">
-                            <img src="img/jesnagar-granadas-62x23-2004.jpg" alt="Granadas – Bodegón simbólico en óleo sobre madera – Jesnagar" loading="lazy">
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openLightbox('img/jesnagar-granadas-62x23-2004.jpg')">
+                            <img src="img/jesnagar-granadas-62x23-2004.jpg" alt="Granadas – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>Granadas</h3>
-                            <p class="category-year es-only">Bodegón • Óleo sobre madera • 2004</p>
-                            <p class="category-year en-only">Still life • Oil on wood • 2004</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>62 x 23 cm</p>
-                            <p class="es-only">Obra en colección privada (Emiratos Árabes)</p>
-                            <p class="en-only">In private collection (UAE)</p>
+                            <p class="es-only">Óleo sobre madera • 2004<br>62 x 23 cm.</p>
+                            <p class="en-only">Oil on wood • 2004<br>62 x 23 cm.</p>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-vista-de-cantillana-102x80-2003.jpg')">
-                            <img src="img/jesnagar-vista-de-cantillana-102x80-2003.jpg" alt="Vista de Cantillana – Paisaje andaluz en óleo sobre madera – Jesnagar" loading="lazy">
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openLightbox('img/jesnagar-vista-de-cantillana-102x80-2003.jpg')">
+                            <img src="img/jesnagar-vista-de-cantillana-102x80-2003.jpg" alt="Vista de Cantillana – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>Vista de Cantillana</h3>
-                            <p class="category-year es-only">Paisaje • Óleo sobre madera • 2003</p>
-                            <p class="category-year en-only">Landscape • Oil on wood • 2003</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>102 x 80 cm</p>
-                            <p class="status es-only">Obra en colección privada</p>
-                            <p class="status en-only">In private collection</p>
+                            <p class="es-only">Óleo sobre madera • 2003<br>102 x 80 cm.</p>
+                            <p class="en-only">Oil on wood • 2003<br>102 x 80 cm.</p>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-100x50-2003.jpg')">
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openLightbox('img/jesnagar-sevilla-desde-el-rio-100x50-2003.jpg')">
                             <img src="img/jesnagar-sevilla-desde-el-rio-100x50-2003.jpg" alt="Sevilla desde el Río (2003) – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>Sevilla desde el Río</h3>
-                            <p class="category-year es-only">Paisaje • Óleo sobre lienzo • 2003</p>
-                            <p class="category-year en-only">Landscape • Oil on canvas • 2003</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>100 x 50 cm</p>
-                            <a href="#contacto" class="btn btn-light es-only">Solicitar ficha técnica y disponibilidad</a>
-                            <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
+                            <p class="es-only">Óleo sobre lienzo • 2003<br>100 x 50 cm.</p>
+                            <p class="en-only">Oil on canvas • 2003<br>100 x 50 cm.</p>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-vista-de-cantillana-100x50-2010.jpg')">
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openLightbox('img/jesnagar-vista-de-cantillana-100x50-2010.jpg')">
                             <img src="img/jesnagar-vista-de-cantillana-100x50-2010.jpg" alt="Vista de Cantillana (2010) – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>Vista de Cantillana</h3>
-                            <p class="category-year es-only">Paisaje • Óleo sobre madera • 2010</p>
-                            <p class="category-year en-only">Landscape • Oil on wood • 2010</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>100 x 50 cm</p>
-                            <a href="#contacto" class="btn btn-light es-only">Solicitar ficha técnica y disponibilidad</a>
-                            <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
+                            <p class="es-only">Óleo sobre madera • 2010<br>100 x 50 cm.</p>
+                            <p class="en-only">Oil on wood • 2010<br>100 x 50 cm.</p>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-granadas-61x50-2015.jpg')">
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openLightbox('img/jesnagar-granadas-61x50-2015.jpg')">
                             <img src="img/jesnagar-granadas-61x50-2015.jpg" alt="Granadas (2015) – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>Granadas</h3>
-                            <p class="category-year es-only">Bodegón • Óleo sobre madera • 2015</p>
-                            <p class="category-year en-only">Still life • Oil on wood • 2015</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>61 x 50 cm</p>
-                            <a href="#contacto" class="btn btn-light es-only">Solicitar ficha técnica y disponibilidad</a>
-                            <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
+                            <p class="es-only">Óleo sobre madera • 2015<br>61 x 50 cm.</p>
+                            <p class="en-only">Oil on wood • 2015<br>61 x 50 cm.</p>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-item-image" onclick="openLightbox('img/jesnagar-granadas-en-ventana-100x80-2016.jpg')">
+                    <div class="obra-card">
+                        <div class="obra-imagen" onclick="openLightbox('img/jesnagar-granadas-en-ventana-100x80-2016.jpg')">
                             <img src="img/jesnagar-granadas-en-ventana-100x80-2016.jpg" alt="Granadas en Ventana – Jesnagar" loading="lazy">
                         </div>
-                        <div class="gallery-item-info">
+                        <div class="obra-info">
                             <h3>Granadas en Ventana</h3>
-                            <p class="category-year es-only">Bodegón • Óleo sobre lienzo • 2016</p>
-                            <p class="category-year en-only">Still life • Oil on canvas • 2016</p>
-                            <p class="style-tag es-only"><strong>Estilo:</strong> Figuración Expresiva Contemporánea</p>
-                            <p class="style-tag en-only"><strong>Style:</strong> Contemporary Expressive Figuration</p>
-                            <p>100 x 81 cm</p>
-                            <p class="saatchi-mention es-only">Obra disponible internacionalmente en <a href="https://www.saatchiart.com/en-es/jesnagar" target="_blank">Saatchi Art</a> y <a href="https://www.wescover.com/creator/jesnagar" target="_blank">Wescover</a>.</p>
-                            <p class="saatchi-mention en-only">Internationally available through <a href="https://www.saatchiart.com/en-es/jesnagar" target="_blank">Saatchi Art</a> and <a href="https://www.wescover.com/creator/jesnagar" target="_blank">Wescover</a>.</p>
-                            <a href="#contacto" class="btn btn-light es-only">Solicitar ficha técnica y disponibilidad</a>
-                            <a href="#contacto" class="btn btn-light en-only">Request technical sheet and availability</a>
+                            <p class="es-only">Óleo sobre lienzo • 2016<br>100 x 81 cm.</p>
+                            <p class="en-only">Oil on canvas • 2016<br>100 x 81 cm.</p>
+                            <p class="saatchi-mention es-only">Obra disponible internacionalmente en <a href="https://www.saatchiart.com/en-es/jesnagar" target="_blank">Saatchi Art</a>.</p>
+                            <p class="saatchi-mention en-only">Internationally available through <a href="https://www.saatchiart.com/en-es/jesnagar" target="_blank">Saatchi Art</a>.</p>
+                            <a href="#contacto" class="btn btn-light es-only">Solicitar información</a>
+                            <a href="#contacto" class="btn btn-light en-only">Request details</a>
                         </div>
                     </div>
                 </div>
@@ -281,7 +445,6 @@
                 </p>
             </div>
         </section>
-        <!-- 🔁 SECCIÓN COLECCIONES (MEJORADA CON PRESTIGIO GLOBAL) -->
         <section id="colecciones">
             <div class="container">
                 <h2 class="es-only">Presencia en Colecciones Internacionales y Plataformas Profesionales</h2>
@@ -341,7 +504,6 @@
                 </div>
             </div>
         </section>
-        <!-- 🔹 SECCIONES RESTANTES SIN CAMBIOS ESTRUCTURALES (AUTENTICIDAD, BIOGRAFÍA, CONTACTO, GALERÍA 3D) -->
         <section id="autenticidad">
             <div class="container">
                 <h2 class="es-only">Certificado de Autenticidad</h2>
@@ -499,7 +661,6 @@
                 <a href="https://www.artsteps.com/view/691f3b6797a7abda358d6389?currentUser" target="_blank" class="btn en-only">Visit 3D Gallery</a>
             </div>
         </section>
-        <!-- 🔹 SECCIÓN WESCOVER - PRESTIGIO Y VISIBILIDAD GLOBAL -->
         <section id="wescover" style="padding: 60px 0; background-color: #f9f9f9;">
             <div class="container">
                 <h2 class="es-only">Mi obra en Wescover</h2>
@@ -512,8 +673,6 @@
                     Wescover features artists whose work resonates with architecture, interior design, and emotional storytelling. 
                     My paintings are curated there as authentic Spanish art that bridges Andalusian soul and contemporary spaces.
                 </p>
-
-                <!-- 🔸 MAPA INTERACTIVO DE WESCOVER -->
                 <div style="text-align: center; margin: 30px 0;">
                     <iframe 
                         frameborder="0" 
@@ -529,7 +688,6 @@
                         style="max-width: 900px; margin: 0 auto; display: block; border: 1px solid #eee; border-radius: 8px;">
                     </iframe>
                 </div>
-
                 <p style="text-align: center; margin-top: 20px;">
                     <a 
                         href="https://www.wescover.com/creator/jesnagar" 
@@ -545,7 +703,7 @@
             </div>
         </section>
     </main>
-    <!-- ✨ LIGHTBOX MEJORADO (SIN CAMBIOS) -->
+    <!-- ✨ LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
         <span id="close-lightbox">&times;</span>
         <button id="prev-btn" class="nav-btn" onclick="prevImage(); event.stopPropagation();">
@@ -557,7 +715,7 @@
         <div id="image-counter"></div>
         <img id="lightbox-img" src="" alt="Ampliar obra">
     </div>
-    <!-- POPUP DE NEWSLETTER (SIN CAMBIOS) -->
+    <!-- POPUP DE NEWSLETTER -->
     <div id="newsletter-popup">
         <div class="popup-content">
             <span id="close-popup">&times;</span>
@@ -573,7 +731,7 @@
             </form>
         </div>
     </div>
-    <!-- BOTONES FLOTANTES (SIN CAMBIOS) -->
+    <!-- BOTONES FLOTANTES -->
     <div id="floating-social">
         <a href="https://wa.me/34613039483" target="_blank" class="social-btn whatsapp" title="Contactar por WhatsApp">
             <i class="fab fa-whatsapp"></i>
@@ -627,10 +785,10 @@
             <p>&copy; 2025 Jesnagar. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <!-- ✅ FUNCIONES DE LIGHTBOX/GALERÍA (SIN CAMBIOS) -->
     <script>
         let currentImages = [];
         let currentIndex = 0;
+
         function openGallery(images) {
             currentImages = images;
             currentIndex = 0;
@@ -640,30 +798,36 @@
             document.getElementById('next-btn').style.display = currentImages.length > 1 ? 'block' : 'none';
             document.getElementById('image-counter').style.display = currentImages.length > 1 ? 'block' : 'none';
         }
+
         function openLightbox(src) {
             openGallery([src]);
         }
+
         function updateLightbox() {
             document.getElementById('lightbox-img').src = currentImages[currentIndex];
             document.getElementById('image-counter').textContent = (currentIndex + 1) + ' / ' + currentImages.length;
         }
+
         function prevImage() {
             if (currentImages.length > 1) {
                 currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
                 updateLightbox();
             }
         }
+
         function nextImage() {
             if (currentImages.length > 1) {
                 currentIndex = (currentIndex + 1) % currentImages.length;
                 updateLightbox();
             }
         }
+
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
             currentImages = [];
             currentIndex = 0;
         }
+
         document.addEventListener('keydown', (e) => {
             if (document.getElementById('lightbox').style.display === 'flex') {
                 if (e.key === 'Escape') closeLightbox();
@@ -671,6 +835,7 @@
                 if (e.key === 'ArrowRight') nextImage();
             }
         });
+
         document.getElementById('langToggle')?.addEventListener('click', () => {
             document.body.classList.toggle('es');
             document.getElementById('langToggle').textContent = document.body.classList.contains('es') ? 'EN' : 'ES';
