@@ -1,11 +1,38 @@
 backend:
   name: git-gateway
   branch: main
+
 media_folder: "img"
-public_folder: "/img"
+public_folder: "img"
+
 collections:
+  - name: "obras"
+    label: "🎨 Obras de Arte"
+    folder: "_obras" # Aquí se guardarán tus cuadros nuevos
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      # Datos básicos
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Imagen de la Obra", name: "image", widget: "image"}
+      
+      # Detalles técnicos
+      - {label: "Año", name: "year", widget: "number", value_type: "int"}
+      - {label: "Medidas (ej: 100 x 81 cm)", name: "dimensions", widget: "string"}
+      
+      # Textos Bilingües (Como en tu web)
+      - {label: "Técnica (Español)", name: "technique_es", widget: "string", default: "Óleo sobre madera"}
+      - {label: "Technique (English)", name: "technique_en", widget: "string", default: "Oil on wood"}
+      
+      - {label: "Descripción Corta (Español)", name: "desc_es", widget: "string", required: false}
+      - {label: "Short Description (English)", name: "desc_en", widget: "string", required: false}
+
+      # Música y Extras
+      - {label: "Enlace Spotify (Opcional)", name: "spotify_url", widget: "string", required: false, hint: "Pega aquí el enlace de Embed de Spotify"}
+      - {label: "Estado", name: "status", widget: "select", options: ["Disponible", "Colección Privada", "Vendido"], default: "Disponible"}
+
   - name: "blog"
-    label: "Blog"
+    label: "📝 Blog"
     folder: "blog"
     create: true
     fields:
