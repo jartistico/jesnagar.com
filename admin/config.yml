@@ -1,11 +1,30 @@
 backend:
   name: git-gateway
   branch: main
+
 media_folder: "img"
-public_folder: "/img"
+public_folder: "img"
+
 collections:
+  # SECCIÓN 1: TUS OBRAS DE ARTE
+  - name: "obras"
+    label: "🎨 Obras de Arte"
+    folder: "_obras"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Año", name: "year", widget: "number", value_type: "int"}
+      - {label: "Técnica (Español)", name: "technique_es", widget: "string", default: "Óleo sobre madera"}
+      - {label: "Technique (English)", name: "technique_en", widget: "string", default: "Oil on wood"}
+      - {label: "Medidas", name: "dimensions", widget: "string", required: false}
+      - {label: "Enlace Spotify", name: "spotify_url", widget: "string", required: false}
+      - {label: "Estado", name: "status", widget: "select", options: ["Disponible", "Colección Privada", "Vendido"], default: "Disponible"}
+
+  # SECCIÓN 2: BLOG
   - name: "blog"
-    label: "Blog"
+    label: "📝 Blog"
     folder: "blog"
     create: true
     fields:
