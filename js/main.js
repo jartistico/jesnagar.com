@@ -62,6 +62,7 @@ function highlightLink() {
 
 window.addEventListener('scroll', highlightLink);
 
+// --- AQUÍ ESTÁ LA CORRECCIÓN ---
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -76,10 +77,23 @@ if (contactForm) {
         submitBtn.disabled = true;
         
         try {
-            alert('✅ Mensaje enviado correctamente. Te contactaré pronto.');
-            contactForm.reset();
+            // Enviamos los datos REALMENTE a Formspree
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                alert('✅ Mensaje enviado correctamente. Te contactaré pronto.');
+                contactForm.reset();
+            } else {
+                alert('❌ Hubo un error. Por favor, escríbeme directamente a jesnavarro@gmail.com o por WhatsApp.');
+            }
         } catch (error) {
-            alert('📧 Email: jesnavarro@gmail.com');
+            alert('❌ Error de conexión. Por favor, usa el botón de WhatsApp.');
         } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
