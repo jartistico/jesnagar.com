@@ -7,16 +7,47 @@
     <meta name="keywords" content="loro gris africano, yaco, loro youyou, cernícalo americano, criador aves exóticas, Sevilla, tuloro">
     <title>Aviario Tuloro | Criador de Loros Grises Africanos - Sevilla</title>
     
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- FAVICON ACTUALIZADO CON TU LOGO -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ESTILOS ESPECÍFICOS PARA EL LOGO (Para que se vea perfecto sin tocar tu CSS) -->
+    <style>
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 45px; /* Tamaño perfecto para la barra de navegación */
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: inherit;
+        }
+        .footer-logo {
+            height: 60px; /* Un poco más grande para el pie de página */
+            width: auto;
+            margin-bottom: 15px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <span class="logo-text"> Aviario Tuloro</span>
+            <!-- LOGO INTEGRADO EN LA BARRA DE NAVEGACIÓN -->
+            <a href="#inicio" class="logo">
+                <img src="img/logo.png" alt="Logo Aviario Tuloro" class="logo-img">
+                <span class="logo-text">Aviario Tuloro</span>
             </a>
+            
             <button class="nav-toggle" id="navToggle" aria-label="Menú">
                 <span class="hamburger"></span>
             </button>
@@ -134,7 +165,7 @@
                 </div>
                 
                 <div class="filosofia-item">
-                    <div class="filosofia-icon"></div>
+                    <div class="filosofia-icon">📜</div>
                     <h3>Documentación en Regla</h3>
                     <p>Todas las aves cuentan con su anilla reglamentaria y documentación CITES correspondiente.</p>
                 </div>
@@ -146,7 +177,7 @@
                 </div>
                 
                 <div class="filosofia-item">
-                    <div class="filosofia-icon"></div>
+                    <div class="filosofia-icon">📍</div>
                     <h3>Sin Exportación</h3>
                     <p>Entregas personales en mano en Sevilla para asegurar que llegan sin estrés.</p>
                 </div>
@@ -196,7 +227,7 @@
                     </p>
                     
                     <div class="contacto-item">
-                        <span class="contacto-icon"></span>
+                        <span class="contacto-icon">📱</span>
                         <div>
                             <h4>WhatsApp</h4>
                             <a href="https://wa.me/34613039483" target="_blank">+34 613 03 94 83</a>
@@ -212,7 +243,7 @@
                     </div>
                     
                     <div class="contacto-item">
-                        <span class="contacto-icon"></span>
+                        <span class="contacto-icon">📍</span>
                         <div>
                             <h4>Ubicación</h4>
                             <p>Villaverde del Río, Sevilla</p>
@@ -253,6 +284,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <!-- LOGO EN EL FOOTER -->
+                    <img src="img/logo.png" alt="Logo Aviario Tuloro" class="footer-logo">
                     <h3>Aviario Tuloro</h3>
                     <p>Criador por afición de aves exóticas en Sevilla. Pasión y compromiso con el bienestar animal.</p>
                 </div>
